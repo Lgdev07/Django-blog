@@ -25,7 +25,7 @@ SECRET_KEY = 'y%2*7o7fzo2g*xziw$jwgb9#@8jv1)^t2umgdeg)j=iz3e-(qj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://lgdev07.pythonanywhere.com/']
+ALLOWED_HOSTS = ['luantechblog.herokuapp.com']
 
 
 # Application definition
