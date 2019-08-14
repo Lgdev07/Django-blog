@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,7 @@ SECRET_KEY = 'y%2*7o7fzo2g*xziw$jwgb9#@8jv1)^t2umgdeg)j=iz3e-(qj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['luantechblog.herokuapp.com']
+ALLOWED_HOSTS = ['luantechblog.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -85,6 +86,10 @@ DATABASES = {
         'PASSWORD': os.environ.get('MYSQL_PASSWORD'),
     }
 }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
