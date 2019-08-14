@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.conf import settings
+from users.models import Profile
+
 
 class Post(models.Model):
     title = models.CharField(max_length=100)
@@ -34,3 +36,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class User(Profile):
+    pass
